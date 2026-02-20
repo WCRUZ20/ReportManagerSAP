@@ -54,6 +54,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SAPBusinessOneSDK, Version=1.1.0.1, Culture=neutral, PublicKeyToken=c7c3cb60e45d119f, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,7 +64,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="SAPBusinessOneSDK" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Form1.b1f">
@@ -72,9 +72,16 @@
     <Compile Include="Form1.b1f.cs">
       <DependentUpon>Form1.b1f</DependentUpon>
     </Compile>
+    <Compile Include="Form2.b1f.cs">
+      <DependentUpon>Form2.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ChooseFromListManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Form2.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
