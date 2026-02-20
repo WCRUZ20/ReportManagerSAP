@@ -76,12 +76,20 @@
       <DependentUpon>Form2.b1f</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ChooseFromListManager.cs" />
+    <Compile Include="Helpers\FormLoader.cs" />
+    <Compile Include="Helpers\SrfFormLoader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Form2.b1f">
       <FormCategory>UserForm</FormCategory>
     </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Forms\Principal.srf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

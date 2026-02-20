@@ -1,4 +1,5 @@
-﻿using SAPbouiCOM.Framework;
+﻿using ReportManager.Helpers;
+using SAPbouiCOM.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -47,6 +48,11 @@ namespace ReportManager
                 oCreationPackage.UniqueID = "ReportManager.Form1";
                 oCreationPackage.String = "Generar reporte";
                 oMenus.AddEx(oCreationPackage);
+
+                oCreationPackage.Type = SAPbouiCOM.BoMenuType.mt_STRING;
+                oCreationPackage.UniqueID = "ReportManager.Principal";
+                oCreationPackage.String = "Generar reporte (SRF)";
+                oMenus.AddEx(oCreationPackage);
             }
             catch (Exception er)
             { //  Menu already exists
@@ -64,6 +70,30 @@ namespace ReportManager
                 {
                     Form1 activeForm = new Form1();
                     activeForm.Show();
+                }
+
+                if (pVal.MenuUID == "ReportManager.Principal")
+                {
+                    //string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+
+                    //string srfPath = System.IO.Path.Combine(baseDir, "Forms", "Principal.srf");
+
+                    //var form = ReportManager.Helpers.SrfFormLoader.LoadFromFile(srfPath);
+
+                    var oForm = SrfFormLoader.Load(@"Principal.srf"); // o @"C:\...\Forms\Principal.srf"
+                    oForm.Freeze(true);
+                    try
+                    {
+                        // set datasources, binds, etc...
+                    }
+                    finally
+                    {
+                        oForm.Freeze(false);
+                    }
+
+                    //form.Mode = SAPbouiCOM.BoFormMode.fm_OK_MODE;
+
+                    return;
                 }
             }
             catch (Exception ex)
