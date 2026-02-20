@@ -59,7 +59,7 @@ namespace ReportManager
             BubbleEvent = true;
             //throw new System.NotImplementedException();
             //Application.SBO_Application.SetStatusBarMessage("Boton ejecutar presionado", SAPbouiCOM.BoMessageTime.bmt_Short, false);
-            Application.SBO_Application.StatusBar.SetText("Boton ejecutar presionado", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
+            Application.SBO_Application.StatusBar.SetText("Boton ejecutar presionado..", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
         }
 
         public void inicomponentes()
